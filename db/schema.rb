@@ -13,22 +13,25 @@
 
 ActiveRecord::Schema.define(version: 20160102201828) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "event_sessions", force: :cascade do |t|
-    t.string   "code",       limit: 255
-    t.string   "title",      limit: 255
-    t.integer  "created_by", limit: 4
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
-    t.boolean  "status",                 default: false
+    t.string   "code"
+    t.string   "title"
+    t.integer  "created_by"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "status",     default: false
   end
 
   create_table "questions", force: :cascade do |t|
-    t.text     "description",      limit: 65535
-    t.integer  "event_session_id", limit: 4
-    t.integer  "vote_count",       limit: 4,     default: 0
-    t.integer  "status",           limit: 4,     default: 0
-    t.datetime "created_at",                                 null: false
-    t.datetime "updated_at",                                 null: false
+    t.text     "description"
+    t.integer  "event_session_id"
+    t.integer  "vote_count",       default: 0
+    t.integer  "status",           default: 0
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   add_index "questions", ["event_session_id"], name: "index_questions_on_event_session_id", using: :btree
