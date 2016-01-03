@@ -80,6 +80,7 @@ body {
   padding-left: 0;
   padding-right: 0;
   font-family: 'Avenir',sans-serif;
+  padding-top: 20px;
 }
 .purple-submit{
   background-color: #773F9B;
@@ -131,3 +132,20 @@ padding-top: 5px;
     height: 100%;
     opacity : 0.2;
 }
+.event-create{
+  background-color:#A6AAA9;
+  border:none;
+  padding: 8px 25px 8px 25px;
+  border-radius: 6px;
+  font-size: 15px;
+  &:hover{
+    background-color:#7A7D7D;
+  }
+  &:active{
+    background-color: #7A7D7D;
+  }
+}
+  
+  .event_session{
+    padding-top: 40px;
+  }
