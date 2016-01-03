@@ -1,0 +1,54 @@
+<%= form_for @question,:html => { :class => "form-horizontal event_session" ,'data-parsley-validate'=>''} do |f| %>
+    <div class="form-group search-box">
+      <div class="col-lg-9 field-container">
+        <%= f.text_field :description,:placeholder=>'Ask a question...', :class => 'form-control search-field' ,'data-parsley-required'=>'','data-parsley-trigger'=>'change','data-parsley-min-length'=>6%>
+      </div>
+      <div>
+        <%= submit_tag 'Ask', :class => 'btn btn-primary btn-lg submit-btn' %>
+      </div>
+    </div>
+<% end %>
+
+<ul>
+
+  <%@questions.each do  |question| %>
+
+      <li class="col-lg-12 question">
+        <span class="col-lg-2">
+          <a class="btn-sm vote-up" href="javascript:void(0)" question_id="<%=question.id%>">vote up</a>
+          <span class="vote-count"><%=question.vote_count%></span>
+        </span>
+        <span class="col-lg-10"><%=question.description%></span>
+
+      </li>
+  <%end%>
+</ul>
+
+
+
+
+<script type="text/javascript">
+  $(function(){
+    $('.vote-up').click(function(){
+      $.ajax({url:['/questions/',$(this).attr('question_id'),'/vote_up'].join('')
+      });
+      set_count(this);
+    });
+  });
+
+  function  get_count(elem){
+      return parseInt($(elem).parents('.question').find('.vote-count').text());
+    }
+    function  set_count(elem){
+      var parent=$(elem).parents('.question');
+      parent.find('.vote-count').text(get_count(elem)+1);
+       if(get_count(elem) > get_count(parent.prev().find('a'))){
+         parent.prev().hasClass('question') ? parent.insertBefore(parent.prev()) : '';
+
+       }
+
+
+    }
+
+</script>
+

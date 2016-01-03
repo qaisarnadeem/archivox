@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyText
+  event_session_id: 
+  vote_count: 1
+  status: 1
+
+two:
+  description: MyText
+  event_session_id: 
+  vote_count: 1
+  status: 1

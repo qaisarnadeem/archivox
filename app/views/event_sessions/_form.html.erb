@@ -1,0 +1,44 @@
+<%= form_for @event_session, :html => { :class => "form-horizontal event_session" ,'data-parsley-validate'=>''} do |f| %>
+
+  <% if @event_session.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@event_session.errors.count, "error") %> prohibited this event_session from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @event_session.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <%= f.label 'Event Session Name', :class => 'control-label' %>
+        <%= f.text_field :title, :class => 'form-control' ,'data-parsley-required'=>'','data-parsley-trigger'=>'change','data-parsley-type'=>"alphanum"%>
+      </div>
+    </div>
+  <div class="form-group">
+    <div class="col-lg-10">
+      <%= f.label 'Event session access code', :class => 'control-label' %>
+      <%= f.text_field :code, :class => 'form-control' ,'data-parsley-required'=>'','data-parsley-trigger'=>'change','data-parsley-min-length'=>6,'data-parsley-type'=>"alphanum"%>
+    </div>
+  </div>
+
+<!--  <div class="form-group">
+    <%= f.label :Active, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.check_box :status, :class => 'form-control' %>
+    </div>
+  </div>
+-->
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit 'Create', :class => 'btn btn-primary' %>
+    </div>
+  </div>
+
+<% end %>
