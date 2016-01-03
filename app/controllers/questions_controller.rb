@@ -3,6 +3,10 @@ class QuestionsController < ApplicationController
   def index
     @questions=@event_session.questions.order('vote_count desc');
     @question=Question.new
+    @left_panel_class='left-class'
+    @right_panel_class='right-class'
+    @center_panel_class='col-lg-12'
+    @body_class="questions_index"
   end
 
   def create

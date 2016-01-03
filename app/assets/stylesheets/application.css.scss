@@ -1,6 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import 'parsley';
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -32,6 +33,19 @@
     padding: 0 45px 0 45px;
   }
 }
+.navbar-default .navbar-brand{
+font-family: 'Montserrat', sans-serif;
+font-size: 24px;
+color:white;
+&:hover,&:focus{
+  color:#EAEAEA;
+}
+}
+
+.navbar.navbar-default.navbar-static-top{
+    border-bottom: none;
+
+}
 
 
 
@@ -52,4 +66,68 @@ body {
   /* Set the fixed height of the footer here */
   height: 50px;
   background-color: #f5f5f5;
+}
+.dark-purple-background{
+  background-color: #5F327C;
+}
+.light-purple-background{
+  background-color: #773F9B;
+}
+.main-description{
+  color:white;
+  font-size: 15px;
+  font-weight: 700;
+  padding-left: 0;
+  padding-right: 0;
+  font-family: 'Avenir',sans-serif;
+}
+.purple-submit{
+  background-color: #773F9B;
+  border:none;
+  &:hover{
+   background-color:#692F8E;
+  }
+  &:focus{
+     background-color:#692F8E;
+  }
+}
+.parsley-errors-list.filled{
+color:#F90B0B;
+padding-top: 5px;
+}
+.footer{
+  color:white;
+  font-size: 12px;
+  font-weight: 700;
+  div.text-center{
+  padding-top: 20px;
+ }
+  font-family: 'Avenir',sans-serif;
+}
+.question-form{
+ background-color: #5F327C;
+ padding: 50px;
+ margin-top: -20px;
+ background-image: url('/assets/chemical_bonds.png');
+ background-size: 400px 400px;
+ z-index: 2;
+}
+.main-container{
+  
+}
+
+.question-formn {
+   position: relative;
+}
+.qquestion-form:before {
+    content : "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('/assets/chemical_bonds.png');
+    background-size: 400px 400px;
+    width: 100%;
+    height: 100%;
+    opacity : 0.2;
 }
