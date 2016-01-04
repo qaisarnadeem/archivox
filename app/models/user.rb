@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
-	validates_presence_of :email,:encrypted_password,:password
+  before_save :encrypt_password
+	validates_presence_of :email,:encrypted_password
 	validates_uniqueness_of :email
-	validates_length_of :password, :minimum => 6
-	before_save :encrypt_password
+	validates_length_of :password, :minimum => 6,:allow_blank=>true
 	after_save :clear_password
     attr_accessor :password 
     private 

@@ -23,7 +23,7 @@ class EventSessionsController < ApplicationController
   # POST /event_sessions.json
   def create
     @event_session = EventSession.new(event_session_params)
-
+    @event_session.created_by=current_user['id']
     respond_to do |format|
       if @event_session.save
         format.html { redirect_to event_sessions_path, notice: 'Event session was successfully created.' }

@@ -58,8 +58,10 @@ end
     user_password=@user.encrypted_password;
     respond_to do |format|
       if @user.update(user_params)
+        notice='User was successfully updated.'
         logout_user if user_password != @user.encrypted_password
-        format.html { redirect_to '/', notice: 'User was successfully updated.' }
+        notice="User was successfully updated. You need to login again as you changed password" if user_password != @user.encrypted_password
+        format.html { redirect_to '/', notice: notice }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }

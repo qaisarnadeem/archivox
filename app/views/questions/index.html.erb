@@ -12,16 +12,17 @@
     </div>
 <% end %>
 </div>
-<ul>
+<ul class="list-unstyled clearfix question-outer">
 
   <%@questions.each do  |question| %>
 
-      <li class="col-lg-12 question">
-        <span class="col-lg-2">
-          <a class="btn-sm vote-up" href="javascript:void(0)" question_id="<%=question.id%>">vote up</a>
+      <li class="question clearfix">
+        <span class="col-lg-2 text-center">
+          <a class="vote-up" href="javascript:void(0)" question_id="<%=question.id%>">
+            <span class="arrow">vote up</span></a><br>
           <span class="vote-count"><%=question.vote_count%></span>
         </span>
-        <span class="col-lg-10"><%=question.description%></span>
+        <h3 class="col-lg-10"><%=question.description%></h3>
 
       </li>
   <%end%>
