@@ -49,8 +49,8 @@
         <a class="navbar-brand" href="/">AECHiVOX</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
    <ul class="nav navbar-nav navbar-right">
-          <%if is_login?%>
-                <li><%= link_to "Quit Evenet", "/main/logout"  %></li>
+          <%if is_login? && params[:controller] =~/questions/i && params[:action]=~/index/i%>
+                <li><%= link_to "Leave Event", "/main/logout"  %></li>
 
           <%end%>
 
@@ -59,6 +59,7 @@
            <%else%>
            <li><%=link_to "Edit Profile", edit_user_path(current_user['id'])%></li>
            <li><%= link_to "Manage Events", event_sessions_path  %></li>
+           <li><%= link_to "Logout", logout_users_path  %></li>
           <%end%>
  </ul>
         </div>

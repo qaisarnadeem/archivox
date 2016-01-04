@@ -29,7 +29,8 @@ class EventSessionsController < ApplicationController
         format.html { redirect_to event_sessions_path, notice: 'Event session was successfully created.' }
         format.json { render :show, status: :created, location: @event_session }
       else
-        format.html { render :new }
+        @event_sessions = EventSession.all
+        format.html { render :index }
         format.json { render json: @event_session.errors, status: :unprocessable_entity }
       end
     end

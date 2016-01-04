@@ -3,6 +3,7 @@ Rails.application.routes.draw do
    collection do
    get :login
    post :authorize
+   get :logout
    end
   end
   resources :event_sessions

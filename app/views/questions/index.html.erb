@@ -16,27 +16,40 @@
 
   <%@questions.each do  |question| %>
 
-      <li class="question clearfix">
+      <li data-id="<%=question.id%>" class="question clearfix <%= question.vote_count.to_i.zero? ? "c_light-gray" :"c_dark-gray" %>">
         <span class="col-lg-2 text-center">
           <a class="vote-up" href="javascript:void(0)" question_id="<%=question.id%>">
             <span class="arrow">vote up</span></a><br>
-          <span class="vote-count"><%=question.vote_count%></span>
+          <span class="vote-count c_light-gray"><%=question.vote_count%> votes</span>
         </span>
-        <h3 class="col-lg-10"><%=question.description%></h3>
-
+        <h3 class="col-lg-10 question-text"><%=question.description%></h3>
       </li>
+  <%end%>
+  <%if @questions.length.zero?%>
+  <li class="question clearfix c_dark-gray empty">
+<h3>
+No questions have been asked yet. Go ahead and ask one.</h3>
+  </li>
   <%end%>
 </ul>
 
-
+</div>
 
 
 <script type="text/javascript">
   $(function(){
     $('.vote-up').click(function(){
+
+     var parent=$(this).parents('.question');
+
+     if(Cookies.get('q_a_'+$(parent).data().id) ==undefined) {
+      Cookies.set('q_a_'+$(parent).data().id, 'done', { expires: 365 }); 
       $.ajax({url:['/questions/',$(this).attr('question_id'),'/vote_up'].join('')
       });
       set_count(this);
+    }else {
+
+    }
     });
   });
 
@@ -45,10 +58,17 @@
     }
     function  set_count(elem){
       var parent=$(elem).parents('.question');
-      parent.find('.vote-count').text(get_count(elem)+1);
+      Cookies.set('q_a_'+$(parent).data().id, 'done', { expires: 365 });
+      parent.find('.vote-count').text(get_count(elem)+1+ ' votes');
+      $(parent).removeClass('c_light-gray').addClass('c_dark-gray');
        if(get_count(elem) > get_count(parent.prev().find('a'))){
-         parent.prev().hasClass('question') ? parent.insertBefore(parent.prev()) : '';
-
+         parent.prev().hasClass('question') ? $(parent).slideUp(function(){
+         $(this).insertBefore($(this).prev()).fadeIn();
+         }) : '';
+         
+       } else {
+              $(parent).css('opacity','0.6');
+              $(parent).animate({opacity:1.0},800);
        }
 
 
