@@ -38,7 +38,8 @@
     <![endif]-->
   </head>
   <body class="<%=@body_class%>">
-
+<div class='col-lg-2'></div>
+<div class='col-lg-8'>
     <div class="navbar navbar-default navbar-static-top light-purple-background">
       <div class="container">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
@@ -46,9 +47,9 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/">AECHiVOX</a>
+        <a class="navbar-brand" href="/">ARCHiVOX</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
-   <ul class="nav navbar-nav navbar-right">
+   <ul class="nav navbar-nav navbar-right-custom">
           <%if is_login? && params[:controller] =~/questions/i && params[:action]=~/index/i%>
                 <li><%= link_to "Leave Event", "/main/logout"  %></li>
 
@@ -69,6 +70,8 @@
           <%= bootstrap_flash %>
           <%= yield %>
     </div> <!-- /container -->
+        </div>
+    <div class='col-lg-2'></div>
     <div class="footer light-purple-background">
       <div class="text-center">Let’s hear it. Copyright The ArchiTech Platform 2015-16. All Rights Reserved.</div>
     </div>
