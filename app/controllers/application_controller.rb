@@ -9,4 +9,16 @@ class ApplicationController < ActionController::Base
     session[:event_code] && EventSession.find_by_code(session[:event_code])
   end
 
+def require_login
+    redirect_to login_users_path('', :redirect_url=>request.path) ,flash=>{:error=>"Please login first to access this page"} unless  current_user
+end
+
+def current_user
+session[:current_user]
+end
+
+def logout_user
+	session[:current_user]=nil
+end	
+
 end

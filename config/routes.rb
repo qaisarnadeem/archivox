@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :users ,:only=>[:edit,:new,:create,:update] do 
+   collection do
+   get :login
+   post :authorize
+   end
+  end
   resources :event_sessions
   resources :main ,:only=>[:index] do
     collection do

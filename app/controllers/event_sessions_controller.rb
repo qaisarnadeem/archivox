@@ -1,6 +1,6 @@
 class EventSessionsController < ApplicationController
   before_action :set_event_session, only: [:show, :edit, :update, :destroy]
-
+  before_action :require_login
   # GET /event_sessions
   # GET /event_sessions.json
   def index
