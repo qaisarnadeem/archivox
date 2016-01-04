@@ -17,6 +17,10 @@
  *= require_tree .
  *= require_self
  */
+
+ .container {
+     max-width:940px;
+ }
 .search-box{
   .search-field {
     height: 50px;
@@ -58,6 +62,7 @@ color:white;
     border-bottom: none;
     height:70px;
     padding-top:5px;
+    margin-bottom:0;
 }
 
 
@@ -125,7 +130,6 @@ padding-top: 5px;
  background-color: #5F327C;
  padding: 50px;
  padding-left:10%;
- margin-top: -20px;
  overflow:auto;
 
 }
