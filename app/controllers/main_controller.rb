@@ -1,7 +1,6 @@
 class MainController < ApplicationController
   def index
     redirect_to questions_path if get_event_session
-    @body_class='dark-purple-background'
   end
 
   def login
