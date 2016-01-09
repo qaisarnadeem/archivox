@@ -6,7 +6,7 @@
       <div class="col-xs-9 field-container">
         <%= f.text_field :description,:placeholder=>'Ask a question...', :class => 'form-control search-field' ,'data-parsley-required'=>'','data-parsley-trigger'=>'change','data-parsley-min-length'=>6%>
       </div>
-      <div class="col-xs-3">
+      <div class="col-xs-3 remove-pd">
         <%= submit_tag 'Ask', :class => 'btn btn-primary btn-lg submit-btn purple-submit' %>
       </div>
     </div>
