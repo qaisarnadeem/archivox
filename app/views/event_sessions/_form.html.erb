@@ -1,3 +1,4 @@
+<div class="col-md-9 col-md-offset-2" style="padding: 50px;">
 <%= form_for @event_session, :html => { :class => "form-horizontal event_session" ,'data-parsley-validate'=>''} do |f| %>
 
   <% if @event_session.errors.any? %>
@@ -40,5 +41,5 @@
       <%= f.submit 'Create', :class => 'btn btn-primary event-create' %>
     </div>
   </div>
-
+</div>
 <% end %>
