@@ -17,12 +17,12 @@
   <%@questions.each do  |question| %>
 
       <li data-id="<%=question.id%>" class="question clearfix <%= question.vote_count.to_i.zero? ? "c_light-gray" :"c_dark-gray" %>">
-        <span class="col-lg-2 text-center">
+        <span class="col-xs-2 text-center">
           <a class="vote-up" href="javascript:void(0)" question_id="<%=question.id%>">
             <span class="arrow">vote up</span></a><br>
           <span class="vote-count c_light-gray"><%=question.vote_count%> votes</span>
         </span>
-        <h3 class="col-lg-10 question-text"><%=question.description%></h3>
+        <h3 class="col-xs-10 question-text"><%=question.description%></h3>
       </li>
   <%end%>
   <%if @questions.length.zero?%>
