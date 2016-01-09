@@ -1,4 +1,4 @@
-
+<div class="col-md-6 col-md-offset-3">
 	<h1>Sign In</h1>
 <%= form_tag authorize_users_path , :html => { :class => "form-horizontal event_session" ,'data-parsley-validate'=>''} do |f| %>
   <div class="form-group">
@@ -11,6 +11,7 @@
     </div>
   <div class="actions">
     <%= submit_tag 'Login' ,:class=>'btn btn-primary event-create'%>
+  </div>
   </div>
 <% end %>
 
