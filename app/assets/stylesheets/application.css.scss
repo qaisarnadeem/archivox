@@ -43,6 +43,9 @@ color:white;
   color:#EAEAEA;
 }
 }
+.nav>li>a:hover, .nav>li>a:focus {
+    color: #404040 !important;
+}
 .nav.navbar-nav.navbar-right-custom{
   font-family: 'Montserrat', sans-serif;
   a{
