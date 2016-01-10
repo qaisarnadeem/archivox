@@ -1,6 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import 'parsley';
+@import 'parsley';z
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
@@ -130,6 +130,9 @@ footer {
 }
 td{
     min-width: 101px;
+}
+.alert {
+    margin: 20px 50px;
 }
 .navbar-toggle .icon-bar {
     border: solid 1px gray;
