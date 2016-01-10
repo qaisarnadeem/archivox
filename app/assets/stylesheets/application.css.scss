@@ -120,7 +120,7 @@ footer{
   font-family: 'Avenir',sans-serif;
 }
 .question-index{
-  background: linear-gradient( rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45) ),rgba(241, 241, 241, 0.84) center;
+  background: linear-gradient( rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45) ),rgba(241, 241, 241, 0.84) url("https://raw.githubusercontent.com/qaisarnadeem/archivox/master/app/assets/images/chemical_bonds.png") center;
   background-size: 800px 800px;
 }
 .question-form{
@@ -154,8 +154,8 @@ z-index:2;
     top: 72px;
     left: 16px;
     background-image: url('https://raw.githubusercontent.com/qaisarnadeem/archivox/master/app/assets/images/chemical_bonds.png');
-    background-size: 800px 800px;
-    width: 98%;
+    background-size: 400px 400px;
+    width: 100%;
     height: 100%;
     opacity : 0.25;
 }
@@ -238,3 +238,4 @@ color:#A6AAA9 !important;
         font-family: "Avenir Medium";
         src: url(/assets/avenir_medium.otf) format("truetype");
     }
+
