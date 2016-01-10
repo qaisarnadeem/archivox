@@ -86,12 +86,14 @@ html {
 footer {
   clear: both;
   position: relative;
-  font-size: 18px;
   z-index: 1000;
-  margin-top: -3em;
   height: 50px;
   background-color: #f5f5f5;
   text-align: center;
+  color:white;
+  font-weight: 500;
+  padding-top: 10px;
+  font-family: 'Avenir',sans-serif;
 }
 .dark-purple-background{
   background-color: #5F327C;
@@ -125,13 +127,6 @@ footer {
 .parsley-errors-list.filled{
 color:#F90B0B;
 padding-top: 5px;
-}
-footer{
-  color:white;
-  font-size: 18px;
-  font-weight: 500;
-  padding-top: 10px;
-  font-family: 'Avenir',sans-serif;
 }
 .question-index{
   background: #FFF;
