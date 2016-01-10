@@ -131,6 +131,13 @@ footer {
 td{
     min-width: 101px;
 }
+.navbar-toggle .icon-bar {
+    border: solid 1px gray;
+}
+.navbar-toggle {
+    background-color: #FFF;
+    border: #FFF;
+}
 .parsley-errors-list.filled{
 color:#F90B0B;
 padding-top: 5px;
