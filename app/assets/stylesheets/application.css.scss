@@ -56,7 +56,9 @@ color:white;
   }
   }
 }
-
+.navbar {
+    margin-bottom: 20px;
+}
 
 .navbar.navbar-default.navbar-static-top{
     border-bottom: none;
@@ -144,11 +146,6 @@ z-index:2;
   position:relative;
   padding-bottom:24px;
   z-index:2;
-.question{
-}
-}
-.main-container{
-  
 }
 
 .question-form form{
