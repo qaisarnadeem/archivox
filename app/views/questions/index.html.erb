@@ -22,7 +22,7 @@
         <span class="col-xs-2 text-center">
           <a class="vote-up" href="javascript:void(0)" question_id="<%=question.id%>">
             <span class="arrow">vote up</span></a><br>
-          <span class="vote-count c_light-gray"><%=question.vote_count%> votes</span>
+          <span class="vote-count c_light-gray"><%=question.vote_count%> <%="vote".pluralize(question.vote_count)%></span>
         </span>
         <h3 class="col-xs-10 question-text"><%=question.description%></h3>
       </li>
