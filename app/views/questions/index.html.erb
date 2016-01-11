@@ -64,9 +64,19 @@ No questions have been asked yet. Go ahead and ask one.</h3>
       var vote_text=get_count(elem) == 0 ? ' vote' : ' votes';
       parent.find('.vote-count').text(get_count(elem)+1+ vote_text);
       $(parent).removeClass('c_light-gray').addClass('c_dark-gray');
+
+     var elem_to_append_with=$(this).prev();
+     var temp_elem=elem;
+     var temp_parent=parent;
+      while(get_count(elem) > get_count(temp_parent.prev().find('a'))){
+        
+        temp_elem=temp_parent.prev().find('a');
+        temp_parent=$(temp_elem).parents('.question');
+        elem_to_append_with=$(temp_elem).parent();
+      }
        if(get_count(elem) > get_count(parent.prev().find('a'))){
          parent.prev().hasClass('question') ? $(parent).slideUp(function(){
-         $(this).insertBefore($(this).prev()).fadeIn();
+         $(this).insertBefore(temp_parent).fadeIn();
          }) : '';
          
        } else {
