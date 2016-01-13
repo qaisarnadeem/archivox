@@ -1,12 +1,20 @@
 class QuestionsController < ApplicationController
   before_action :check_login
   def index
-    @questions=@event_session.questions.order('vote_count desc');
+    @questions=@event_session.questions.order('vote_count desc,id')
     @question=Question.new
     @left_panel_class='left-class'
     @right_panel_class='right-class'
     @center_panel_class='col-lg-12'
     @body_class="questions_index"
+  end
+
+
+  def refresh_questions
+    @questions=@event_session.questions.order('vote_count desc,id')
+    respond_to do |format|
+        format.js
+    end
   end
 
   def create

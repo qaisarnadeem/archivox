@@ -17,6 +17,9 @@ Rails.application.routes.draw do
     member do
       get :vote_up
     end
+    collection do
+      get :refresh_questions
+    end
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

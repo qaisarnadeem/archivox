@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="228547766">
+    <data-source source="LOCAL" name="Rails archivox: development" uuid="ddb8e8a8-cf2d-4633-9cc5-7736d342bcdf">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1/archivox_development</jdbc-url>
+      <user-name>pingooo</user-name>
+      <user-password>dfdadfc3dfc4dfcddfc5dfc5dfc5</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails archivox: test" uuid="84cba5ae-71d4-4bb0-90ea-75f49b792726">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1/archivox_test</jdbc-url>
+      <user-name>pingooo</user-name>
+      <user-password>dfdadfc3dfc4dfcddfc5dfc5dfc5</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails archivox: production" uuid="f3effa6c-647c-451c-af0f-256a5e34ca80">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1/archivox_production</jdbc-url>
+      <user-name>archivox</user-name>
+      <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddfebdff8dfe9dfe2dfe3dffcdfe5dff2dff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+

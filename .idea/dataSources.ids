@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Rails archivox: development" uuid="ddb8e8a8-cf2d-4633-9cc5-7736d342bcdf">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails archivox: test" uuid="84cba5ae-71d4-4bb0-90ea-75f49b792726">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails archivox: production" uuid="f3effa6c-647c-451c-af0f-256a5e34ca80">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+</component>

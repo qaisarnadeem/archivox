@@ -1,4 +1,3 @@
-
 <div class="question-index">
 <div class="question-form">
 <%= form_for @question,:html => { :class => "form-horizontal event_session" ,'data-parsley-validate'=>''} do |f| %>
@@ -14,78 +13,20 @@
     </div>
 <% end %>
 </div>
-<ul class="list-unstyled clearfix question-outer">
-
-  <%@questions.each do  |question| %>
-
-      <li data-id="<%=question.id%>" class="question clearfix <%= question.vote_count.to_i.zero? ? "c_light-gray" :"c_dark-gray" %>">
-        <span class="col-xs-2 text-center">
-          <a class="vote-up" href="javascript:void(0)" question_id="<%=question.id%>">
-            <span class="arrow">vote up</span></a><br>
-          <span class="vote-count c_light-gray"><%=question.vote_count%> <%="vote".pluralize(question.vote_count)%></span>
-        </span>
-        <h3 class="col-xs-10 question-text"><%=question.description%></h3>
-      </li>
-  <%end%>
-  <%if @questions.length.zero?%>
-  <li class="question clearfix c_dark-gray empty">
-<h3>
-No questions have been asked yet. Go ahead and ask one.</h3>
-  </li>
-  <%end%>
-</ul>
+<%= render :partial => 'questions_panel' %>
 
 </div>
 
 
 <script type="text/javascript">
   $(function(){
-    $('.vote-up').click(function(){
-
-     var parent=$(this).parents('.question');
-
-     if(Cookies.get('q_a_'+$(parent).data().id) ==undefined) {
-      Cookies.set('q_a_'+$(parent).data().id, 'done', { expires: 365 }); 
-      $.ajax({url:['/questions/',$(this).attr('question_id'),'/vote_up'].join('')
-      });
-      set_count(this);
-    }else {
-
-    }
-    });
+    $('.vote-up').click(handle_vot_up);
   });
-
-  function  get_count(elem){
-      return parseInt($(elem).parents('.question').find('.vote-count').text());
-    }
-    function  set_count(elem){
-      var parent=$(elem).parents('.question');
-      Cookies.set('q_a_'+$(parent).data().id, 'done', { expires: 365 });
-      var vote_text=get_count(elem) == 0 ? ' vote' : ' votes';
-      parent.find('.vote-count').text(get_count(elem)+1+ vote_text);
-      $(parent).removeClass('c_light-gray').addClass('c_dark-gray');
-
-     var elem_to_append_with=$(this).prev();
-     var temp_elem=elem;
-     var temp_parent=parent;
-      while(get_count(elem) > get_count(temp_parent.prev().find('a'))){
-        
-        temp_elem=temp_parent.prev().find('a');
-        temp_parent=$(temp_elem).parents('.question');
-        elem_to_append_with=$(temp_elem).parent();
-      }
-       if(get_count(elem) > get_count(parent.prev().find('a'))){
-         parent.prev().hasClass('question') ? $(parent).slideUp(function(){
-         $(this).insertBefore(temp_parent).fadeIn();
-         }) : '';
-         
-       } else {
-              $(parent).css('opacity','0.6');
-              $(parent).animate({opacity:1.0},800);
-       }
-
-
-    }
-
+  $(document).ready(function() {
+      $.ajaxSetup({ cache: false }); // This part addresses an IE bug.  without it, IE will only load the first number and will never refresh
+      setInterval(function() {
+          $.ajax({url:'/questions/refresh_questions'});
+      }, 15000); // the "3000"
+  });
 </script>
 
