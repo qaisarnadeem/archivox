@@ -1,2 +1,3 @@
 $('.question-outer').replaceWith('<%=escape_javascript(render :partial => 'questions/questions_panel') %>');
 $('.vote-up').click(handle_vot_up);
+$('.remove-question').click(handle_question_removal);

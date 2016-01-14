@@ -8,7 +8,11 @@
             <span class="arrow">vote up</span></a><br>
           <span class="vote-count c_light-gray"><%=question.vote_count%> <%="vote".pluralize(question.vote_count)%></span>
         </span>
-        <h3 class="col-xs-10 question-text"><%=question.description%></h3>
+
+        <h3 class="col-xs-10 question-text"><%=question.description%>
+          <%if current_user%>
+              <i class="glyphicon glyphicon-remove pull-right text-danger remove-question" data-id="<%=question.id%>" style="margin-right: 30px;"></i></h3>
+          <%end%>
       </li>
   <%end%>
   <%if @questions.length.zero?%>

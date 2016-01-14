@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :questions ,:only=>[:index,:create] do
     member do
       get :vote_up
+      post :remove
     end
     collection do
       get :refresh_questions

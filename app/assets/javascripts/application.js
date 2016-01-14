@@ -62,5 +62,17 @@ function  set_count(elem){
         $(parent).animate({opacity:1.0},800);
     }
 
-
+}
+function handle_question_removal(){
+    if(confirm("Are you sure you want to delete this comment permanently?")){
+        var q_id=$(this).data().id;
+        var elem_to_hide=this;
+        $.post('/questions/'+q_id.toString()+'/remove',function(data){
+            if(data.responce=='SUCCESS'){
+                $(elem_to_hide).parents('.question').fadeOut();
+            }else if(data.responce=='ERROR') {
+                alert(data.message);
+            }
+        });
+    }
 }

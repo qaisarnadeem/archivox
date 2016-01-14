@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :check_login
+  before_action :require_login ,:only => [:remove]
   def index
     @questions=@event_session.questions.order('vote_count desc,id')
     @question=Question.new
@@ -31,6 +32,13 @@ class QuestionsController < ApplicationController
     question=@event_session.questions.where(:id=>params[:id]).first
     question.increment(:vote_count).save
     render :text => "Question Incremented";
+  end
+
+  def remove
+     @question=Question.find_by_id(params[:id])
+     render :json => {:message=>"This question is not found. It might already be deleted",:responce=>"ERROR"} and  return unless @question
+     @question.destroy
+     render :json => {:message=>"Question successfully removed",:responce=>"SUCCESS"}
   end
 
   private
