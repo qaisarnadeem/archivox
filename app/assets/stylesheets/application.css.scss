@@ -17,6 +17,9 @@
  *= require_tree .
  *= require_self
  */
+ .remove-question{
+   cursor: pointer;
+ }
 .search-box{
   .search-field {
     height: 50px;
