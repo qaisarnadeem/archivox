@@ -64,7 +64,6 @@ function  set_count(elem){
 
 }
 function handle_question_removal(){
-    if(confirm("Are you sure you want to delete this comment permanently?")){
         var q_id=$(this).data().id;
         var elem_to_hide=this;
         $.post('/questions/'+q_id.toString()+'/remove',function(data){
@@ -74,5 +73,4 @@ function handle_question_removal(){
                 alert(data.message);
             }
         });
-    }
 }
